@@ -1,0 +1,20 @@
+﻿@model TextMatch.Models.TextString
+
+<div>
+    <form method="post"  asp-controller="Home" asp-action="FindMatches">
+        <table style="border-collapse: separate; border-spacing: 0 1em;">
+            <tr>
+                <td>Enter your text: </td>
+                <td><input type="text" class="form-control" style="width: 800px;" name="Text"  value="@Model.Text"/></td>
+            </tr>
+            <tr>
+                <td>Enter sub-text (Pattern): </td>
+                <td><input type="text" class="form-control" style="width: 300px;" name="SubText" value="@Model.SubText"/></td>
+            </tr>
+        </table>
+        <br/>
+        <input type="submit" value="Find Matching Indices"/>
+        <hr />
+        @ViewBag.Result
+    </form>
+</div>
